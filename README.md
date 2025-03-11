@@ -2,8 +2,6 @@
 
 My hyprland configuration files 
 
-![20250108_14h14m47s_grim](https://github.com/user-attachments/assets/880eecf3-f995-4d19-ba48-3cfbcabccf7c)
-
 Core Packages
 ```bash
 hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd sbctl nano
