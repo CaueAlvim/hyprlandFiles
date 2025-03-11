@@ -1,25 +1,27 @@
 # Hyprland dotfiles
 
-this is repository for my hyprland config 
+My hyprland configuration files 
 
 ![20250108_14h14m47s_grim](https://github.com/user-attachments/assets/880eecf3-f995-4d19-ba48-3cfbcabccf7c)
 
-Main Packages
+Core Packages
 ```bash
-hyprland hypridle hyprlock kitty waybar swaync xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd sbctl nano grim slurp swww ttf-dejavu ttf-dejavu-nerd cantarell-fonts imagemagick hyprpolkitagent hyprsunset opus opusfile mesa vulkan-radeon greetd fuzzel starship
+hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd sbctl nano
 ```
 
-Apps
+Essential/Preferred Apps
 ```bash
-swayimg gvfs-mtp btop thunar thunar-volman tumbler
+hyprpolkitagent hyprsunset kitty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu ttf-dejavu-nerd cantarell-fonts
 ```
 
-Zen Browser flatpak permissions (.local/share/flatpak/overrides/app.zen_browser.zen)
+Codecs/Drivers/Other Stuff
 ```bash
-[Context]
-shared=!ipc;!network
-sockets=!cups;!pcsc;!fallback-x11;!x11
-devices=!all;dri
+gvfs-mtp imagemagick ffmpeg opus opusfile mesa vulkan-radeon
+```
+
+Other Daily Usage Apps
+```bash
+swayimg btop thunar thunar-volman tumbler starship
 ```
 
 Steam flatpak permissions (.local/share/flatpak/overrides/com.valvesoftware.Steam)
