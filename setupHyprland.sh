@@ -25,9 +25,7 @@ sleep 0.5
 sudo pacman -S swayimg btop thunar thunar-volman tumbler starship --noconfirm
 sleep 0.5
 
-mkdir -p $HOME/.config
-cp -r dotfiles/ $HOME/.config/
-
 clear
 echo "ATIVAR ufw E greetd, substitua o comando default no arquivo /etc/greetd/config.toml"
+echo "Copie as configurações:  cp -r dotfiles/* $HOME/.config"
 echo "Atualizar firmware e rodar xdg-user-dirs-update"
