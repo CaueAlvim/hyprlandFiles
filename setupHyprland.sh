@@ -10,7 +10,7 @@ sudo pacman -Syu --noconfirm
 sleep 0.5
 
 # Install core packages
-sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd sbctl nano --noconfirm
+sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd nano --noconfirm
 sleep 0.5
 
 # Install essential packages
