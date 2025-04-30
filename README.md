@@ -4,7 +4,7 @@ My hyprland configuration files
 
 Core Packages
 ```bash
-hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd sbctl nano
+hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd nano
 ```
 
 Essential/Preferred Apps
