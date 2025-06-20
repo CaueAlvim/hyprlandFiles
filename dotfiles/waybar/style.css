@@ -82,7 +82,6 @@ window#waybar.hidden {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
 #wireplumber,
 #tray {
     padding: 0 10px;
@@ -167,8 +166,4 @@ button {
 
 label:focus {
     background-color: #000000;
-}
-
-#pulseaudio.muted {
-    color: #000;
 }
