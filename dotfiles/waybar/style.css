@@ -80,7 +80,6 @@ window#waybar.hidden {
 #battery,
 #disk,
 #temperature,
-#backlight,
 #network,
 #wireplumber,
 #tray {
@@ -133,7 +132,6 @@ button {
     background-color: @lightBlue;
     border-radius: 8px;
     min-width: 33px;
-    opacity:1.0;
 }
 
 #workspaces button.active:hover {
@@ -146,7 +144,6 @@ button {
 
 #workspaces button.urgent {
     background-color: @lightRed;
-    border-radius: 15px;
 }
 
 #clock {
