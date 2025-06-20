@@ -2,7 +2,7 @@
 
 {
     "custom/appmenu": {
-        "format": "\udb82\udcc7",
+        "format": "\uf359",
         "tooltip": false,
         "return-type": "json",
         "on-click": "killall fuzzel || fuzzel",
@@ -125,11 +125,12 @@
     
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "\uf1eb Connected{icon}",
-        "format-ethernet": "\udb83\udc53 Connected{icon}",
-        "tooltip-format": "{ifname}/{ipaddr} via {gwaddr} \uf14a",
-        "format-linked": "{ifname} (No IP) \udb80\udf7a",
-        "format-disconnected": "\udb80\udd5b Disconnected",
+        "format-wifi": "\uf1eb",
+        "format-ethernet": "\udb83\udc53",
+        "format-disconnected": "\udb80\udd5b",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "Connected to {ifname} via {gwaddr}",
+        "tooltip-format-disconnected": "Disconnected",
     },
     
     "wireplumber": {
