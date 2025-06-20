@@ -1,8 +1,8 @@
 @define-color midGrey rgba(140, 140, 140, 0.6);
 @define-color darkGrey rgba(40, 40, 40, 0.7);
-@define-color lightBlue rgba(143, 232, 247, 1);
-@define-color lightRed rgba(250, 70, 96, 1);
-@define-color bgWhite rgba(235, 235, 235, 0.8);
+@define-color lightBlue rgb(135, 215, 230);
+@define-color lightRed rgb(250, 70, 100);
+@define-color bgWhite rgba(220, 220, 220, 0.8);
 @define-color bgBlack rgba(20, 20, 20, 0.85);
 @define-color white rgb(235, 235, 235);
 @define-color black rgb(20, 20, 20);
@@ -37,23 +37,13 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
-}
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
 /* -----------------------------------------------------
  * Custom Modules
  * ----------------------------------------------------- */
 
 #custom-appmenu {
     color: @lightBlue;
-    font-size: 25px;
+    font-size: 23px;
     margin: 3px 0px 3px 20px;
 }
 
@@ -108,9 +98,8 @@ window#waybar.hidden {
 }
 
 #wireplumber.muted {
-    color: #b6b7b8;
+    color: @bgWhite;
 }
-
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -124,19 +113,17 @@ button {
 
 #workspaces {
     background: transparent;
-    border-radius: 15px;
-    opacity: 0.8;
     margin: 3px 0px 3px 15px;
 }
 
 #workspaces button {
     padding: 0px 10px;
     margin: 3px 3px;
-    border-radius: 15px;
+    border-radius: 8px;
     border: 0px;
     background-color: @bgWhite;
     color: @bgBlack;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -145,10 +132,13 @@ button {
 
 #workspaces button.active {
     background-color: @lightBlue;
-    color: @black;
-    border-radius: 15px;
-    min-width: 35px;
+    border-radius: 8px;
+    min-width: 33px;
     opacity:1.0;
+}
+
+#workspaces button.active:hover {
+    background: @lightBlue;
 }
 
 #workspaces button.focused {
@@ -158,10 +148,6 @@ button {
 #workspaces button.urgent {
     background-color: @lightRed;
     border-radius: 15px;
-}
-
-#workspaces button.active:hover {
-    background: @lightBlue;
 }
 
 #clock {
