@@ -91,6 +91,7 @@ window#waybar.hidden {
     color: @lightBlue;
 }
 
+#workspaces button.urgent,
 #network.disconnected {
     color: @lightRed;
 }
@@ -132,18 +133,6 @@ button {
     background-color: @lightBlue;
     border-radius: 8px;
     min-width: 33px;
-}
-
-#workspaces button.active:hover {
-    background: @lightBlue;
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-}
-
-#workspaces button.urgent {
-    background-color: @lightRed;
 }
 
 @keyframes blink {
