@@ -16,7 +16,7 @@ selectedImage="$(find "$wallpaperDir" -name '*.png' | shuf -n1)"
 
 if pgrep "swww-daemon" > /dev/null ; then
 	if [[ "$transition_type" == "grow" ]]; then
-		swww img "$selectedImage" --transition-fps $refreshRate --transition-type $transition_type --transition-duration 1 --transition-pos 1620,20 --invert-y
+		swww img "$selectedImage" --transition-fps $refreshRate --transition-type $transition_type --transition-duration 1 --transition-pos 1725,20 --invert-y
 	else
 		swww img "$selectedImage" --transition-fps $refreshRate --transition-type $transition_type --transition-duration 1
 	fi
