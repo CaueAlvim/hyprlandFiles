@@ -194,6 +194,12 @@
   background-image: none;
 }
 
+/************
+ * Mousepad *
+ ************/
+.mousepad scrolledwindow textview border.left {
+  background-color: @primary;
+}
 
 /* Context menus, thunar doesn't have specific css classes for this */
 menu {
