@@ -1,13 +1,12 @@
 ################################################################################
 # General configuration
 ################################################################################
+
 [general]
-# Mode at startup (viewer/gallery)
+# Mode at startup (viewer/slideshow/gallery)
 mode = viewer
-# Window position (parent or absolute coordinates, e.g. 100,200)
-position = parent
-# Window size (fullscreen/parent/image, or absolute size, e.g. 800,600)
-size = parent
+# Use window decoration (yes/no)
+decoration = no
 # Action performed by SIGUSR1 signal (same format as for key bindings)
 sigusr1 = reload
 # Action performed by SIGUSR2 signal (same format as for key bindings)
@@ -18,38 +17,54 @@ app_id = swayimg
 ################################################################################
 # Viewer mode configuration
 ################################################################################
+
 [viewer]
-# Window background color (RGBA)
+# Window background color (auto/extend/mirror/RGBA)
 window = #00000000
 # Background for transparent images (grid/RGBA)
 transparency = grid
-# Default image scale (optimal/fit/width/height/fill/real)
+# Default image scale (optimal/width/height/fit/fill/real/keep)
 scale = optimal
-# Keep absolute zoom across images (yes/no)
-keep_zoom = no
-# Initial image position
+# Initial image position on the window (center/top/bottom/free/...)
 position = center
-# Fix position of the image on the window surface (yes/no)
-fixed = yes
 # Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
 antialiasing = mks13
-# Run slideshow at startup (yes/no)
-slideshow = no
-# Slideshow image display time (seconds)
-slideshow_time = 3
+# Loop image list: jump to first image when end of list is reached (yes/no)
+loop = yes
 # Number of previously viewed images to store in cache
 history = 1
 # Number of preloaded images (read ahead)
 preload = 1
 
 ################################################################################
+# Slideshow mode configuration
+################################################################################
+
+[slideshow]
+# Slideshow image display time (seconds)
+time = 5
+# Window background color (auto/extend/mirror/RGBA)
+window = auto
+# Background for transparent images (grid/RGBA)
+transparency = #000000ff
+# Default image scale (optimal/width/height/fit/fill/real)
+scale = fit
+# Initial image position on the window (center/top/bottom/free/...)
+position = center
+# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
+antialiasing = mks13
+
+################################################################################
 # Gallery mode configuration
 ################################################################################
+
 [gallery]
-# Size of the thumbnail (pixels)
+# Height and width of each thumbnail (pixels)
 size = 200
-# Max number of thumbnails in memory cache, 0 for unlimited
+# Max number of invisible thumbnails stored in memory cache
 cache = 100
+# Load not only visible but also adjacent thumbnails
+preload = no
 # Enable/disable storing thumbnails in persistent storage (yes/no)
 pstore = no
 # Fill the entire tile with thumbnail (yes/no)
@@ -70,19 +85,23 @@ shadow = #000000ff
 ################################################################################
 # Image list configuration
 ################################################################################
+
 [list]
-# Default order (none/alpha/reverse/random)
+# Default order (none/alpha/numeric/mtime/size/random)
 order = alpha
-# Looping list of images (yes/no)
-loop = yes
+# Reverse order (yes/no)
+reverse = no
 # Read directories recursively (yes/no)
 recursive = no
-# Open all files in the directory of the specified file (yes/no)
+# Add files from the same directory as the first file (yes/no)
 all = yes
+# Enable file system monitoring for adding new images to the list (yes/no)
+fsmon = yes
 
 ################################################################################
 # Font configuration
 ################################################################################
+
 [font]
 # Font name
 name = DejaVu Sans
@@ -98,13 +117,14 @@ background = #000000ff
 ################################################################################
 # Image meta info scheme (format, size, EXIF, etc)
 ################################################################################
+
 [info]
 # Show on startup (yes/no)
 show = yes
 # Timeout to hide info (seconds, 0 to always show)
-info_timeout = 2
+info_timeout = 3
 # Timeout to hide status message (seconds)
-status_timeout = 2
+status_timeout = 3
 
 # Display scheme for viewer mode (position = content)
 [info.viewer]
@@ -113,16 +133,24 @@ top_right = index
 bottom_left = scale,frame
 bottom_right = status
 
+# Display scheme for slideshow mode (position = content)
+[info.slideshow]
+top_left = none
+top_right = none
+bottom_left = none
+bottom_right = none
+
 # Display scheme for gallery mode (position = content)
 [info.gallery]
 top_left = none
-top_right = none
+top_right = index
 bottom_left = none
 bottom_right = name,status
 
 ################################################################################
 # Viewer mode key binding configuration: key = action [parameters]
 ################################################################################
+
 [keys.viewer]
 F1 = help
 Home = first_file
@@ -131,10 +159,11 @@ Left = prev_file
 Right = next_file
 Shift+Space = prev_file
 Space = next_file
+Shift+r = rand_file
 
-x = slideshow
+x = mode slideshow
 f = fullscreen
-Return = mode
+Return = mode gallery
 
 Up = zoom +10
 Down = zoom -10
@@ -153,27 +182,44 @@ Shift+m = flip_horizontal
 a = antialiasing
 r = reload
 e = info
-
-Shift+Delete = exec rm "%"; skip_file
-
 Escape = exit
 q = exit
 
+Shift+Delete = exec rm -f '%' && echo "File removed: %"; skip_file
+
 # Mouse related
-# ScrollLeft = step_right 5
-# ScrollRight = step_left 5
-Ctrl+ScrollUp = step_up 5
-Ctrl+ScrollDown = step_down 5
 ScrollUp = zoom +20
 ScrollDown = zoom -20
-Shift+ScrollUp = prev_file
-Shift+ScrollDown = next_file
-Alt+ScrollUp = prev_frame
-Alt+ScrollDown = next_frame
+MouseLeft = drag
+MouseRight = info
+MouseMiddle = mode gallery
+MouseSide = rotate_left
+MouseExtra = rotate_right
+
+################################################################################
+# Slideshow mode key binding configuration: key = action [parameters]
+################################################################################
+
+[keys.slideshow]
+F1 = help
+Home = first_file
+End = last_file
+Prior = prev_file
+Next = next_file
+Shift+r = rand_file
+Shift+d = prev_dir
+d = next_dir
+Space = pause
+i = info
+f = fullscreen
+Return = mode
+Escape = exit
+q = exit
 
 ################################################################################
 # Gallery mode key binding configuration: key = action [parameters]
 ################################################################################
+
 [keys.gallery]
 F1 = help
 Home = first_file
@@ -193,10 +239,4 @@ e = info
 Escape = exit
 q = exit
 
-Shift+Delete = exec rm "%"; skip_file
-
-# Mouse related
-ScrollLeft = step_right
-ScrollRight = step_left
-ScrollUp = step_up
-ScrollDown = step_down
+Shift+Delete = exec rm -f '%' && echo "File removed: %"; skip_file
