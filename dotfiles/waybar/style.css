@@ -91,7 +91,6 @@ window#waybar.hidden {
     color: @lightBlue;
 }
 
-#workspaces button.urgent,
 #network.disconnected {
     color: @lightRed;
 }
@@ -133,6 +132,10 @@ button {
     background-color: @lightBlue;
     border-radius: 8px;
     min-width: 33px;
+}
+
+#workspaces button.urgent {
+    background-color: @lightRed;
 }
 
 @keyframes blink {
