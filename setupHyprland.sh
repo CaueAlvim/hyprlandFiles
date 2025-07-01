@@ -14,7 +14,7 @@ sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-d
 sleep 0.5
 
 # Install essential packages
-sudo pacman -S hyprpolkitagent hyprsunset kitty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu ttf-dejavu-nerd cantarell-fonts --noconfirm
+sudo pacman -S hyprpolkitagent hyprsunset alacritty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu ttf-dejavu-nerd cantarell-fonts --noconfirm
 sleep 0.5
 
 # Install some other stuff
@@ -22,7 +22,7 @@ sudo pacman -S gvfs-mtp imagemagick ffmpeg opus opusfile mesa vulkan-radeon --no
 sleep 0.5
 
 # Install apps
-sudo pacman -S swayimg btop thunar thunar-volman tumbler starship --noconfirm
+sudo pacman -S swayimg btop thunar thunar-volman tumbler --noconfirm
 sleep 0.5
 
 clear
