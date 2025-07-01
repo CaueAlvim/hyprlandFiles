@@ -23,3 +23,6 @@ background = "#303030"
 [colors.selection]
 text = "#202020"
 background = "#4baac9"
+
+[colors.normal]
+blue = "#009dff"
