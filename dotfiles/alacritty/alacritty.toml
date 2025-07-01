@@ -6,10 +6,10 @@ decorations = "None"
 decorations_theme_variant = "None"
 
 [font]
-normal = { family = "DejaVu Sans Mono"}
-bold = { family = "DejaVu Sans Mono", style = "Bold"}
-italic = { family = "DejaVu Sans Mono", style = "Oblique"}
-bold_italic = { family = "DejaVu Sans Mono", style = "Bold Oblique"}
+normal = { family = "Adwaita Mono"}
+bold = { family = "Adwaita Mono", style = "Bold"}
+italic = { family = "Adwaita Mono", style = "Italic"}
+bold_italic = { family = "Adwaita Mono", style = "Bold Italic"}
 size = 14
 
 [cursor]
@@ -25,4 +25,4 @@ text = "#202020"
 background = "#4baac9"
 
 [colors.normal]
-blue = "#009dff"
+blue = "#1ce67a"
