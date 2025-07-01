@@ -9,7 +9,7 @@ hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd n
 
 Essential/Preferred Apps
 ```bash
-hyprpolkitagent hyprsunset kitty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu ttf-dejavu-nerd cantarell-fonts
+hyprpolkitagent hyprsunset alacritty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu ttf-dejavu-nerd cantarell-fonts
 ```
 
 Codecs/Drivers/Other Stuff
@@ -19,7 +19,7 @@ gvfs-mtp imagemagick ffmpeg opus opusfile mesa vulkan-radeon
 
 Other Daily Usage Apps
 ```bash
-swayimg btop thunar thunar-volman tumbler starship
+swayimg btop thunar thunar-volman tumbler
 ```
 
 Steam flatpak permissions (.local/share/flatpak/overrides/com.valvesoftware.Steam)
