@@ -104,7 +104,7 @@ fsmon = yes
 
 [font]
 # Font name
-name = DejaVu Sans
+name = Adwaita Sans
 # Font size (pt)
 size = 14
 # Font color (RGBA)
