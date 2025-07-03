@@ -14,7 +14,7 @@ sudo pacman -S hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-d
 sleep 0.5
 
 # Install essential packages
-sudo pacman -S hyprpolkitagent hyprsunset alacritty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu-nerd --noconfirm
+sudo pacman -S hyprpolkitagent hyprsunset alacritty swaync grim slurp greetd fuzzel swww ttf-dejavu-nerd --noconfirm
 sleep 0.5
 
 # Install some other stuff
