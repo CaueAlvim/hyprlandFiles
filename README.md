@@ -9,7 +9,7 @@ hyprland hypridle hyprlock xdg-desktop-portal-hyprland xdg-user-dirs ufw fwupd n
 
 Essential/Preferred Apps
 ```bash
-hyprpolkitagent hyprsunset alacritty waybar swaync grim slurp greetd fuzzel swww ttf-dejavu-nerd
+hyprpolkitagent hyprsunset alacritty swaync grim slurp greetd fuzzel swww ttf-dejavu-nerd
 ```
 
 Codecs/Drivers/Other Stuff
